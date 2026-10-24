@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#28775b">
+  <meta name="description" content="مبادرة رحمة لمساعدة القطط والكلاب في الشوارع بالطعام والماء والمأوى والعلاج والتطوع.">
+  <meta name="keywords" content="إنقاذ القطط, إنقاذ الكلاب, إطعام حيوانات الشوارع, رعاية الحيوانات, التبرع للحيوانات, متطوعين">
+  <title>رحمة | مأوى لكل روح</title>
+
+  <style>
+    :root {
+      --green: #28775b;
+      --dark: #173f32;
+      --light: #f2f8f3;
+      --orange: #efa84a;
+      --text: #26352d;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a { text-decoration: none; }
+
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo { font-size: 25px; font-weight: bold; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    nav a { color: white; font-size: 14px; }
+
+    .hero {
+      padding: 65px 6%;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(120deg, rgba(15,55,39,.94), rgba(40,119,91,.82)),
+        url("https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero h1 { font-size: clamp(30px, 5vw, 48px); margin: 0 0 12px; }
+    .hero p { max-width: 720px; margin: 0 auto 24px; font-size: 18px; }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      border: none;
+      border-radius: 9px;
+      background: var(--orange);
+      color: #30240f;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    .btn-green { background: var(--green); color: white; }
+    .btn-white { background: white; color: var(--dark); }
+
+    section { padding: 45px 6%; scroll-margin-top: 20px; }
+
+    .section-title { text-align: center; margin-bottom: 28px; }
+    .section-title h2 { color: var(--dark); margin-bottom: 5px; }
+    .section-title p { margin-top: 0; color: #66766c; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 23px;
+      border-radius: 14px;
+      background: white;
+      border: 1px solid #e3ece5;
+      box-shadow: 0 5px 18px #173f320a;
+    }
+
+    .card h3 { color: var(--green); margin-top: 5px; }
+    .emoji { font-size: 40px; }
+
+    .soft { background: var(--light); }
+
+    .notice {
+      background: #fff7e8;
+      border-right: 4px solid var(--orange);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 14px;
+    }
+
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      border: 1px solid #e3ece5;
+      border-radius: 15px;
+      padding: 24px;
+    }
+
+    label { display: block; font-weight: bold; margin: 12px 0 5px; }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccd9cf;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 15px;
+      background: white;
+    }
+
+    textarea { min-height: 100px; resize: vertical; }
+
+    input[type="file"] { padding: 8px; }
+
+    .payment {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      border: 1px solid #dce9df;
+    }
+
+    .number {
+      font-size: 25px;
+      color: var(--green);
+      font-weight: bold;
+      direction: ltr;
+      display: inline-block;
+      margin: 8px;
+    }
+
+    .steps { max-width: 750px; margin: auto; }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    footer a { color: #ffe0a2; }
+
+    .small { font-size: 13px; color: #68776e; }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      z-index: 10;
+      background: #168c52;
+      color: white;
+      padding: 12px 17px;
+      border-radius: 40px;
+      box-shadow: 0 4px 14px #0002;
+      font-weight: bold;
+    }
+
+    @media(max-width: 600px) {
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      .hero { padding: 48px 5%; }
+      section { padding: 35px 5%; }
+      form { padding: 17px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🐾 رحمة</div>
+  <nav>
+    <a href="#about">عن المبادرة</a>
+    <a href="#help">طرق المساعدة</a>
+    <a href="#report">أبلغ عن حالة</a>
+    <a href="#volunteer">تطوع</a>
+    <a href="#donate">تبرع</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>رحمة – مأوى لكل روح 🐾</h1>
+    <p>
+      لأن كل روح تستحق الرحمة.
+      معًا نستطيع توفير الطعام والماء والمأوى للقطط والكلاب
+      التي تعيش في الشوارع، ومساعدتها على حياة أكثر أمانًا.
+    </p>
+    <a class="btn" href="#help">ساهم في إنقاذ حياة</a>
+    <a class="btn btn-white" href="#report">الإبلاغ عن حيوان</a>
+  </div>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>من نحن؟</h2>
+      <p>مبادرة إنسانية لمساعدة الحيوانات التي تحتاج إلينا.</p>
+    </div>
+    <div class="card">
+      هدفنا هو جمع محبي الحيوانات والمتطوعين وأصحاب الأيادي
+      البيضاء لتقديم الطعام والماء والمأوى والمساعدة البيطرية
+      للحيوانات الموجودة في الشوارع، ونشر ثقافة الرحمة والرفق
+      بالحيوان، وتوثيق المساعدات لضمان الشفافية.
+      <p class="notice">
+        نعمل على تشجيع المشاركة المجتمعية، ولا ندعي وجود مأوى
+        فعلي أو فريق طبي أو مساعدات منفذة إلا بعد توفيرها وتوثيقها.
+      </p>
+    </div>
+  </section>
+
+  <section id="help" class="soft">
+    <div class="section-title">
+      <h2>كيف يمكنك المساعدة؟</h2>
+      <p>حتى المساعدة البسيطة يمكن أن تصنع فرقًا.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="emoji">🥣</div>
+        <h3>توفير الطعام</h3>
+        <p>المساهمة في شراء طعام مناسب للقطط والكلاب وتوزيعه بطريقة آمنة.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">💧</div>
+        <h3>الماء النظيف</h3>
+        <p>توفير أوعية ماء نظيفة وتجديدها بانتظام في أماكن مناسبة.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🏠</div>
+        <h3>المأوى</h3>
+        <p>المساعدة في توفير أماكن جافة وآمنة تحمي الحيوانات من الحر والبرد والمطر.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🩺</div>
+        <h3>الرعاية البيطرية</h3>
+        <p>الإبلاغ عن الحالات المصابة ومحاولة تنسيق المساعدة مع طبيب بيطري.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="report">
+    <div class="section-title">
+      <h2>أبلغ عن حيوان يحتاج للمساعدة</h2>
+      <p>أرسل التفاصيل عبر واتساب حتى نتمكن من معرفة الحالة.</p>
+    </div>
+
+    <form id="reportForm">
+      <label for="animal">نوع الحيوان</label>
+      <select id="animal" required>
+        <option value="">اختر النوع</option>
+        <option>قطة</option>
+        <option>كلب</option>
+        <option>حيوانات أخرى</option>
+      </select>
+
+      <label for="need">نوع المساعدة المطلوبة</label>
+      <select id="need" required>
+        <option value="">اختر المساعدة</option>
+        <option>طعام وماء</option>
+        <option>مأوى</option>
+        <option>حيوان مصاب يحتاج إلى طبيب</option>
+        <option>حيوان صغير أو رضيع</option>
+        <option>حالة طارئة</option>
+        <option>مساعدة أخرى</option>
+      </select>
+
+      <label for="area">المنطقة والعنوان التقريبي</label>
+      <input id="area" placeholder="مثال: الزيتون، اسم الشارع أو أقرب علامة" required>
+
+      <label for="details">تفاصيل الحالة</label>
+      <textarea id="details" placeholder="عدد الحيوانات، حالتها، وهل يوجد خطر عليها؟" required></textarea>
+
+      <label for="photo">صورة الحيوان (اختياري)</label>
+      <input id="photo" type="file" accept="image/*">
+      <p class="small">الصورة لا تُرفع تلقائيًا من الموقع؛ أرسلها في محادثة واتساب بعد فتحها.</p>
+
+      <button class="btn btn-green" type="button" onclick="getLocation()">
+        📍 تحديد موقعي الحالي
+      </button>
+      <p id="locationStatus" class="small">يمكنك كتابة العنوان يدويًا أو استخدام تحديد الموقع.</p>
+
+      <button class="btn btn-green" type="submit" style="width:100%;margin-top:15px">
+        إرسال البلاغ عبر واتساب
+      </button>
+    </form>
+  </section>
+
+  <section id="volunteer" class="soft">
+    <div class="section-title">
+      <h2>انضم إلى فريق المتطوعين</h2>
+      <p>وقتك أو خبرتك أو مساهمتك قد تنقذ حياة.</p>
+    </div>
+
+    <form id="volunteerForm">
+      <label for="vname">الاسم</label>
+      <input id="vname" required placeholder="اكتب اسمك">
+
+      <label for="vphone">رقم هاتفك</label>
+      <input id="vphone" type="tel" required placeholder="رقم التواصل">
+
+      <label for="varea">منطقتك</label>
+      <input id="varea" required placeholder="الحي أو المنطقة">
+
+      <label for="vhelp">كيف تريد المساعدة؟</label>
+      <select id="vhelp" required>
+        <option value="">اختر طريقة المساعدة</option>
+        <option>توفير الطعام والماء</option>
+        <option>تجهيز المأوى</option>
+        <option>المساعدة في علاج الحالات</option>
+        <option>التصوير ونشر الحالات</option>
+        <option>التنسيق والتطوع الميداني</option>
+        <option>التبرع بالمستلزمات</option>
+      </select>
+
+      <button class="btn btn-green" type="submit" style="width:100%;margin-top:18px">
+        تقديم طلب التطوع عبر واتساب
+      </button>
+    </form>
+  </section>
+
+  <section id="donate">
+    <div class="section-title">
+      <h2>ساهم في إطعام حيوان أو توفير مأوى</h2>
+      <p>كل مساهمة يجب أن تُصرف في الغرض المعلن عنها.</p>
+    </div>
+
+    <div class="cards">
+      <div class="payment">
+        <div class="emoji">💚</div>
+        <h3>التبرع عبر إنستا باي</h3>
+        <p>رقم التواصل المخصص للتحويل بحسب بيانات الحساب:</p>
+        <div class="number" id="instaNumber">01004220919</div>
+        <br>
+        <button class="btn btn-green" onclick="copyNumber()">نسخ الرقم</button>
+        <p class="small">
+          يرجى التأكد من بيانات المستفيد داخل تطبيق إنستا باي
+          قبل تأكيد التحويل.
+        </p>
+      </div>
+
+      <div class="payment">
+        <div class="emoji">🐾</div>
+        <h3>تبرع بالطعام أو المستلزمات</h3>
+        <p>يمكن المساهمة بالطعام الجاف، والأوعية، ومواد تجهيز المأوى،
+          أو التنسيق لتوفير الاحتياجات.</p>
+        <a class="btn btn-green" href="#volunteer">تواصل للمساهمة</a>
+      </div>
+    </div>
+
+    <div class="notice" style="max-width:800px;margin:22px auto 0">
+      <strong>الشفافية أولًا:</strong>
+      ينبغي نشر المبالغ المستلمة والمصروفات والفواتير أو صور
+      المشتريات بعد حدوثها بالفعل. لا يُعرض أي رصيد أو إنجاز
+      غير موثق. لا يتم جمع تبرعات عامة باسم جمعية أو جهة مرخصة
+      إلا وفق المتطلبات القانونية المعمول بها.
+    </div>
+  </section>
+
+  <section id="map" class="soft">
+    <div class="section-title">
+      <h2>أماكن الحيوانات التي تحتاج إلى مساعدة</h2>
+      <p>افتح الخريطة للبحث عن أقرب موقع أو عنوان للحالة.</p>
+    </div>
+    <div class="card" style="text-align:center">
+      <div class="emoji">📍</div>
+      <p>يمكنك فتح خرائط جوجل والبحث عن موقع الحيوان أو مشاركة الموقع مع المتطوعين.</p>
+      <a class="btn btn-green"
+         href="https://maps.google.com/"
+         target="_blank" rel="noopener">
+        فتح خرائط جوجل
+      </a>
+      <p class="small">
+        هذه خريطة عامة وليست قاعدة بيانات للحالات المسجلة.
+        تُضاف خريطة تفاعلية للحالات عند إعداد نظام لتخزين البلاغات.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>قواعد الرحمة والمسؤولية</h2>
+    </div>
+    <div class="steps">
+      <p>🐱 لا تقترب من حيوان خائف أو عدواني بطريقة تعرضك للخطر.</p>
+      <p>🐶 لا تقدم أدوية للحيوانات دون توجيه بيطري.</p>
+      <p>🥣 استخدم طعامًا مناسبًا للحيوان وأوعية نظيفة.</p>
+      <p>🏠 لا تضع المأوى في مكان يعوق المشاة أو يسبب خطرًا أو يخالف القواعد المحلية.</p>
+      <p>❤️ ساعد باحترام ورفق، ولا تؤذِ الحيوانات أو تتركها في مكان غير آمن.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <h2>🐾 رحمة – مأوى لكل روح</h2>
+  <p>معًا من أجل حياة أكثر أمانًا للحيوانات في الشوارع.</p>
+  <p>
+    للتواصل:
+    <a href="https://wa.me/201004220919" target="_blank" rel="noopener">
+      واتساب 01004220919
+    </a>
+  </p>
+  <p class="small" style="color:#e4eee7">
+    مبادرة مجتمعية؛ تُنشر الحالات والمساعدات بعد التحقق منها.
+  </p>
+  <p>© <span id="year"></span> رحمة</p>
+</footer>
+
+<a class="whatsapp-float"
+   href="https://wa.me/201004220919"
+   target="_blank" rel="noopener">
+  💬 واتساب
+</a>
+
+<script>
+  const whatsappNumber = "201004220919";
+  let currentLocation = "";
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function openWhatsApp(message) {
+    const url = "https://wa.me/" + whatsappNumber +
+      "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+  }
+
+  function copyNumber() {
+    const number = "01004220919";
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(number)
+        .then(() => alert("تم نسخ الرقم: " + number))
+        .catch(() => prompt("انسخ الرقم يدويًا:", number));
+    } else {
+      prompt("انسخ الرقم يدويًا:", number);
+    }
+  }
+
+  function getLocation() {
+    const status = document.getElementById("locationStatus");
+
+    if (!navigator.geolocation) {
+      status.textContent = "المتصفح لا يدعم تحديد الموقع. اكتب العنوان يدويًا.";
+      return;
+    }
+
+    status.textContent = "جارٍ طلب تحديد الموقع... اسمح للمتصفح بالوصول إلى الموقع.";
+
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        currentLocation =
+          "https://maps.google.com/?q=" + lat + "," + lon;
+
+        status.innerHTML =
+          'تم تحديد الموقع. <a target="_blank" rel="noopener" href="' +
+          currentLocation + '">عرض الموقع على الخريطة</a>';
+      },
+      function() {
+        status.textContent =
+          "تعذر تحديد الموقع. اسمح بإذن الموقع أو اكتب العنوان يدويًا.";
+      },
+      { enableHighAccuracy: true, timeout: 15000 }
+    );
+  }
+
+  document.getElementById("reportForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const animal = document.getElementById("animal").value;
+    const need = document.getElementById("need").value;
+    const area = document.getElementById("area").value.trim();
+    const details = document.getElementById("details").value.trim();
+    const photo = document.getElementById("photo").files[0];
+
+    let message =
+      "🐾 بلاغ جديد لمبادرة رحمة\n\n" +
+      "نوع الحيوان: " + animal + "\n" +
+      "المساعدة المطلوبة: " + need + "\n" +
+      "العنوان: " + area + "\n" +
+      "تفاصيل الحالة: " + details + "\n";
+
+    if (currentLocation) {
+      message += "موقع الحيوان: " + currentLocation + "\n";
+    }
+
+    if (photo) {
+      message +=
+        "\nلدي صورة للحالة باسم: " + photo.name +
+        "\nسأرسل الصورة كمرفق في محادثة واتساب.";
+    }
+
+    openWhatsApp(message);
+  });
+
+  document.getElementById("volunteerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("vname").value.trim();
+    const phone = document.getElementById("vphone").value.trim();
+    const area = document.getElementById("varea").value.trim();
+    const help = document.getElementById("vhelp").value;
+
+    const message =
+      "🐾 طلب تطوع جديد - مبادرة رحمة\n\n" +
+      "الاسم: " + name + "\n" +
+      "الهاتف: " + phone + "\n" +
+      "المنطقة: " + area + "\n" +
+      "طريقة المساعدة: " + help;
+
+    openWhatsApp(message);
+  });
+</script>
+
+</body>
+</html>
